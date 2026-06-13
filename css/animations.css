@@ -1,0 +1,8 @@
+/* ============================================================
+   LOCATORS — ANIMATIONS (Minimal)
+   Only what Reveal.js needs. Nothing extra.
+   ============================================================ */
+
+.reveal [data-count-to] {
+    font-variant-numeric: tabular-nums;
+}

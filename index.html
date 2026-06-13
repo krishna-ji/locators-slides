@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocaTORs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #fff;
+            margin: 0;
+        }
+
+        .reveal {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ===== 1. TITLE ===== -->
+
+            <section class="title-slide">
+                <div class="title-grid">
+                    <div class="title-copy">
+                        <span class="title-kicker">Lumbini Province Police Hackathon 2026</span>
+                        <h1>LocaTORs</h1>
+                        <p class="lead">
+                            Search surveillance footage with natural language.<br>
+                            Turn days of video review into minutes.
+                        </p>
+                    </div>
+
+                    <div class="title-panel" aria-label="LocaTORs search preview">
+                        <div class="title-panel-top">
+                            <span>Case search</span>
+                            <strong>&lt;1s</strong>
+                        </div>
+                        <div class="query-line">"man in red jacket near gate 3"</div>
+                        <div class="match-list">
+                            <div class="match-row">
+                                <span class="match-rank">01</span>
+                                <span>Camera 12 / West gate</span>
+                                <strong>94%</strong>
+                            </div>
+                            <div class="match-row">
+                                <span class="match-rank">02</span>
+                                <span>Camera 08 / Bazaar road</span>
+                                <strong>88%</strong>
+                            </div>
+                            <div class="match-row">
+                                <span class="match-rank">03</span>
+                                <span>Camera 04 / Bus park</span>
+                                <strong>81%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="title-proof">
+                    <div>
+                        <strong>200&ndash;700x</strong>
+                        <span>faster review</span>
+                    </div>
+                    <div>
+                        <strong>Offline</strong>
+                        <span>case-safe processing</span>
+                    </div>
+                    <div>
+                        <strong>Any CCTV</strong>
+                        <span>no new hardware</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 2. THE PROBLEM ===== -->
+
+            <section class="problem-slide">
+                <span class="section-label">The Problem</span>
+
+                <h2>Investigators are drowning in footage</h2>
+
+                <figure class="problem-visual">
+                    <img src="./assets/investigator-footage-overload.png"
+                        alt="Illustration of investigators overwhelmed by days of CCTV footage before LocaTORs accelerates the search.">
+                </figure>
+
+                <p class="problem-caption">
+                    A single incident can mean dozens of cameras, days of manual review, and critical leads going cold.
+                </p>
+            </section>
+
+            <!-- ===== 3. WHY EXISTING TOOLS FAIL ===== -->
+
+            <section>
+                <span class="section-label">Status Quo</span>
+
+                <h2>Why existing approaches fail</h2>
+
+                <div class="cols-3" style="margin-top: 36px;">
+                    <div class="card">
+                        <h3>Human fatigue</h3>
+                        <p>Attention drops after <strong>20 minutes</strong>. Critical frames get missed. It's biology,
+                            not laziness.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Face recognition fails</h3>
+                        <p><strong>40&ndash;60%</strong> of real CCTV has no usable face. Hoods, masks, rear views, low
+                            resolution.</p>
+                    </div>
+                    <div class="card">
+                        <h3>No way to search</h3>
+                        <p>You can't type "man in red jacket near gate 3" into any existing VMS. You just scrub and
+                            hope.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 4. THE SOLUTION ===== -->
+
+            <section>
+                <span class="section-label">The Solution</span>
+
+                <h2>LocaTORs turns passive CCTV footage<br>into a searchable evidence base</h2>
+
+                <div class="divider"></div>
+
+                <p>
+                    Type a description. Upload a photo. Or both.<br>
+                    Get ranked results across every camera in under a second.
+                </p>
+            </section>
+
+            <!-- ===== 5. HOW IT WORKS ===== -->
+
+            <section>
+                <span class="section-label">How It Works</span>
+
+                <h2>Three steps</h2>
+
+                <div class="steps" style="margin-top: 36px;">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <h3>Ingest</h3>
+                        <p>Upload footage. YOLOv8 detects every person. CLIP and OSNet generate searchable embeddings.
+                            FAISS indexes them.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <h3>Search + Detect</h3>
+                        <p>Text query, photo upload, or both. Ranked matches in &lt;1s. X-CLIP flags 11 suspicious
+                            activity types automatically.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <h3>Track + Report</h3>
+                        <p>Cross-camera timeline stitched automatically. One-click PDF with evidence frames, trajectory,
+                            and timestamps.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 6. SEARCH MODES ===== -->
+
+            <section>
+                <span class="section-label">Multi-Modal Search</span>
+
+                <h2>Three ways to find anyone</h2>
+
+                <div class="cols-3" style="margin-top: 32px;">
+                    <div class="card">
+                        <h3>Text search</h3>
+                        <p>Describe the suspect in plain language. CLIP matches visual semantics across all footage.</p>
+                        <p
+                            style="font-family: var(--font-mono); font-size: 0.75em; color: var(--accent); margin-top: 12px;">
+                            "man in red jacket near gate 3"</p>
+                    </div>
+                    <div class="card">
+                        <h3>Photo search</h3>
+                        <p>Upload a reference image. OSNet matches by full body &mdash; works from behind, in crowds,
+                            with masks.</p>
+                        <p
+                            style="font-family: var(--font-mono); font-size: 0.75em; color: var(--accent); margin-top: 12px;">
+                            suspect.jpg &rarr; 47 matches</p>
+                    </div>
+                    <div class="card">
+                        <h3>Hybrid search</h3>
+                        <p>Photo + description together. Weighted fusion of identity and context for highest precision.
+                        </p>
+                        <p
+                            style="font-family: var(--font-mono); font-size: 0.75em; color: var(--accent); margin-top: 12px;">
+                            photo + "carrying a blue bag"</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 7. ACTIVITY DETECTION ===== -->
+
+            <section>
+                <span class="section-label">Activity Detection</span>
+
+                <h2>The system watches so humans don't have to</h2>
+
+                <p style="margin-bottom: 28px;">
+                    LocaTORs recognizes suspicious behavior automatically &mdash;<br>
+                    no one needs to be staring at a monitor 24/7.
+                </p>
+
+                <div class="cols-3">
+                    <div class="card">
+                        <h3>Violence</h3>
+                        <p>Fights, assaults, kicking &mdash; flagged the moment it starts, not after someone reports it.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>Theft &amp; robbery</h3>
+                        <p>Bag snatching, shoplifting, forced robbery &mdash; instant alert with video clip and
+                            timestamp.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Crowd &amp; intrusion</h3>
+                        <p>Crowd panic, fence climbing, loitering near restricted zones &mdash; catch it before it
+                            escalates.</p>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9em; margin-top: 24px;">
+                    Every alert comes with a <strong>video clip</strong>, <strong>thumbnail</strong>, and a
+                    <strong>linked person track</strong><br>
+                    so officers can verify and act in seconds.
+                </p>
+            </section>
+
+            <!-- ===== 8. REAL-WORLD SCENARIO ===== -->
+
+            <section>
+                <span class="section-label">Real-World Scenario</span>
+
+                <h2>Infinite hours. Infinite cameras. One query.</h2>
+
+                <div class="compare">
+                    <div class="compare-col">
+                        <h3 style="color: var(--text-muted);">Without LocaTORs</h3>
+                        <p>3&ndash;5 days of manual scrubbing.</p>
+                        <p>Fatigue errors. Missed evidence.</p>
+                        <p>Leads go cold.</p>
+                    </div>
+                    <div class="compare-col">
+                        <h3 style="color: var(--accent);">With LocaTORs</h3>
+                        <p>"Teenager in blue uniform climbing the west gate fence"</p>
+                        <p>Full cross-camera timeline.</p>
+                        <p style="color: var(--accent); font-weight: 600;">Under 10 minutes.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <div class="big-stat" style="color: var(--accent);">200&ndash;700x</div>
+                    <div class="stat-label">faster than manual review</div>
+                </div>
+            </section>
+
+            <!-- ===== 9. IMPACT TABLE ===== -->
+
+            <section>
+                <span class="section-label">Impact</span>
+
+                <h2>Before and after</h2>
+
+                <table style="margin-top: 28px;">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Before</th>
+                            <th>With LocaTORs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>72 hrs footage review</td>
+                            <td class="dim">3&ndash;5 days</td>
+                            <td class="highlight">10&ndash;30 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>Cross-camera tracking</td>
+                            <td class="dim">Manual correlation</td>
+                            <td class="highlight">Automatic timeline</td>
+                        </tr>
+                        <tr>
+                            <td>Search by description</td>
+                            <td class="dim">Not possible</td>
+                            <td class="highlight">Sub-second query</td>
+                        </tr>
+                        <tr>
+                            <td>Forensic report</td>
+                            <td class="dim">Hours of assembly</td>
+                            <td class="highlight">One click, 15 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>Suspect matching</td>
+                            <td class="dim">Face recognition (fails 40&ndash;60%)</td>
+                            <td class="highlight">Full-body ReID</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure</td>
+                            <td class="dim">Cloud-dependent, proprietary</td>
+                            <td class="highlight">Offline, open-source, $0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ===== 10. TRUST & PRIVACY ===== -->
+
+            <section>
+                <span class="section-label">Trust</span>
+
+                <h2>Built for justice. Not mass surveillance.</h2>
+
+                <div class="cols-2" style="margin-top: 32px;">
+                    <div class="card">
+                        <h3>100% offline</h3>
+                        <p>All processing on the investigator's machine. No cloud. No third-party access. No API keys.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>No persistent biometrics</h3>
+                        <p>Embeddings are generated per case and discarded. No permanent database of identities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Full audit trail</h3>
+                        <p>Every query and action is logged. Chain-of-custody compliance built in from day one.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Human-in-the-loop</h3>
+                        <p>The system surfaces candidates. The investigator makes every final decision. Always.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 11. ARCHITECTURE ===== -->
+
+            <section>
+                <span class="section-label">Architecture</span>
+
+                <h2>The stack</h2>
+
+                <div class="cols-2" style="margin-top: 28px;">
+                    <ul class="feature-list">
+                        <li>
+                            <span class="label">Detection</span>
+                            <span>YOLOv8 &mdash; real-time person detection</span>
+                        </li>
+                        <li>
+                            <span class="label">Re-ID</span>
+                            <span>OSNet &mdash; full-body re-identification (512-d)</span>
+                        </li>
+                        <li>
+                            <span class="label">Search</span>
+                            <span>CLIP ViT-B/32 &mdash; text-to-image matching</span>
+                        </li>
+                        <li>
+                            <span class="label">Activity</span>
+                            <span>X-CLIP &mdash; zero-shot video activity recognition</span>
+                        </li>
+                        <li>
+                            <span class="label">Index</span>
+                            <span>FAISS &mdash; sub-second vector similarity search</span>
+                        </li>
+                    </ul>
+                    <div style="text-align: left;">
+                        <p style="text-align: left; margin-bottom: 14px;"><strong>All pretrained models</strong> &mdash;
+                            zero training data required</p>
+                        <p style="text-align: left; margin-bottom: 14px;"><strong>Open-source</strong> &mdash; PyTorch,
+                            HuggingFace, no vendor lock-in</p>
+                        <p style="text-align: left; margin-bottom: 14px;"><strong>GPU-ready</strong> &mdash; CUDA
+                            acceleration with CPU fallback</p>
+                        <p style="text-align: left;"><strong>Works with any camera</strong> &mdash; standard video
+                            formats, no hardware changes</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 12. ROADMAP ===== -->
+
+            <section>
+                <span class="section-label">Roadmap</span>
+
+                <h2>Where this goes</h2>
+
+                <div class="cols-3" style="margin-top: 32px;">
+                    <div class="card" style="border-left: 2px solid var(--accent); padding-left: 16px;">
+                        <h3 style="font-size: 0.95em;">Now</h3>
+                        <p>Photo + text + hybrid search. 12 activity types. Cross-camera tracking. PDF reports. Audit
+                            logging.</p>
+                    </div>
+                    <div class="card" style="border-left: 2px solid var(--text-muted); padding-left: 16px;">
+                        <h3 style="font-size: 0.95em;">Next</h3>
+                        <p>Real-time RTSP streams. TensorRT acceleration. License plate recognition. WebSocket live
+                            alerts.</p>
+                    </div>
+                    <div class="card" style="border-left: 2px solid var(--text-muted); padding-left: 16px;">
+                        <h3 style="font-size: 0.95em;">Future</h3>
+                        <p>Geospatial heatmaps. Edge deployment (Jetson). Multi-language search. Multi-agency
+                            federation.</p>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.85em; color: var(--text-muted); margin-top: 24px;">
+                    Same core pipeline. No rewrites. Just extensions.
+                </p>
+            </section>
+
+            <!-- ===== USE CASES ===== -->
+
+            <section>
+                <span class="section-label">Use Cases</span>
+
+                <h2>One platform. Many missions.</h2>
+
+                <div class="cols-2" style="margin-top: 32px;">
+                    <div class="card">
+                        <h3>Criminal tracking</h3>
+                        <p>A thief snatches a bag in Butwal bazaar. Upload one blurry photo &mdash; LocaTORs traces
+                            their path across every camera in the city within minutes.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Missing persons &amp; animals</h3>
+                        <p>A child goes missing near a temple during Dashain. Type "small girl in red kurta" &mdash; get
+                            every matching sighting across all cameras, timestamped.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Traffic monitoring</h3>
+                        <p>Track pedestrian flow at Siddharthanagar crossings. Spot jaywalkers, wrong-way vehicles, and
+                            congestion patterns &mdash; all from existing CCTV.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Crowd &amp; mob alerts</h3>
+                        <p>Detect abnormal crowd buildup in real time. Trace where a mob originated, which routes they
+                            took, and alert police before it reaches critical mass.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== CLOSE ===== -->
+
+            <section>
+                <h2 style="font-size: 2.6em; margin-bottom: 0.2em;">
+                    Every hour an investigator spends<br>
+                    scrubbing footage is an hour<br>
+                    they're not in the field.
+                </h2>
+
+                <div class="divider"></div>
+
+                <p class="lead" style="margin-top: 16px;">
+                    LocaTORs gives them the evidence in minutes<br>
+                    so they can focus on the work that matters.
+                </p>
+
+                <div style="margin-top: 56px; font-size: 0.6em; color: var(--text-muted);">
+                    Team LocaTORs &mdash; Lumbini Province Police Hackathon 2026
+                </div>
+            </section>
+
+            <!-- ===== THANK YOU ===== -->
+
+            <section>
+                <h1 style="color: var(--accent); font-size: 3.8em;">Thank you.</h1>
+
+                <div class="divider" style="margin: 32px auto;"></div>
+
+                <p class="lead">
+                    We built this in 48 hours.<br>
+                    Imagine what it does with a real deployment.
+                </p>
+
+                <div style="margin-top: 48px; font-size: 0.85em; color: var(--text-secondary);">
+                    Questions? Let's talk.
+                </div>
+
+                <div
+                    style="margin-top: 40px; font-size: 0.55em; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase;">
+                    Team LocaTORs &bull; Lumbini Province Police Hackathon 2026
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

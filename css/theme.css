@@ -1,0 +1,582 @@
+/* ============================================================
+   LOCATORS — PITCH DECK THEME
+   YC-style: clean, minimal, one idea per slide
+   ============================================================ */
+
+:root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --text-secondary: #52525b;
+    --text-muted: #a1a1aa;
+    --accent: #ff6600;
+    --border: rgba(0, 0, 0, 0.08);
+
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    --r-main-font-size: clamp(17px, 3.9vmin, 28px);
+    --r-main-font: var(--font);
+    --r-heading-font: var(--font);
+    --r-heading-text-transform: none;
+    --r-heading-font-weight: 700;
+    --r-background-color: var(--bg);
+    --r-main-color: var(--text);
+    --r-heading-color: var(--text);
+    --r-heading-line-height: 1.15;
+    --r-heading-letter-spacing: -0.03em;
+    --r-heading-margin: 0 0 0.3em 0;
+    --r-block-margin: 16px;
+
+    --slide-pad-y: clamp(28px, 5.2vmin, 56px);
+    --slide-pad-x: clamp(32px, 5.4vw, 96px);
+    --content-narrow: min(920px, calc(100vw - (2 * var(--slide-pad-x))));
+    --content-default: min(1180px, calc(100vw - (2 * var(--slide-pad-x))));
+    --content-wide: min(1440px, calc(100vw - (2 * var(--slide-pad-x))));
+    --content-xl: min(1560px, calc(100vw - (2 * var(--slide-pad-x))));
+}
+
+/* --- Base --- */
+.reveal {
+    font-family: var(--font);
+    color: var(--text);
+    font-weight: 400;
+}
+
+.reveal .slides {
+    text-align: center;
+}
+
+.reveal .slides section {
+    padding: var(--slide-pad-y) var(--slide-pad-x);
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+/* --- Typography --- */
+.reveal h1 {
+    font-weight: 800;
+    font-size: 3.2em;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.2em;
+}
+
+.reveal h2 {
+    font-weight: 700;
+    font-size: 2.2em;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.3em;
+}
+
+.reveal h3 {
+    font-weight: 600;
+    font-size: 1.15em;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3em;
+}
+
+.reveal p {
+    font-size: 1.05em;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    max-width: var(--content-narrow);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reveal strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* --- Title slide --- */
+.reveal .slides section.title-slide {
+    align-items: stretch;
+    justify-content: space-between;
+    text-align: left;
+    background:
+        linear-gradient(120deg, #ffffff 0%, #ffffff 58%, #fff3ea 58%, #fff3ea 100%);
+    overflow: hidden;
+}
+
+.title-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 102, 0, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 102, 0, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.title-grid,
+.title-proof {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: var(--content-wide);
+    margin: 0 auto;
+}
+
+.title-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 390px;
+    gap: 56px;
+    align-items: center;
+    flex: 1;
+}
+
+.title-kicker {
+    display: block;
+    font-size: 0.62em;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+}
+
+.title-slide h1 {
+    color: var(--accent);
+    font-size: clamp(3.2em, 9.5vw, 4.8em);
+    margin-bottom: 0.12em;
+    white-space: nowrap;
+}
+
+.title-slide .lead {
+    max-width: 650px;
+    margin: 0;
+    text-align: left;
+}
+
+.title-panel {
+    border: 1px solid rgba(255, 102, 0, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 22px 54px rgba(132, 61, 0, 0.16);
+    padding: 22px;
+}
+
+.title-panel-top,
+.match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.title-panel-top {
+    color: var(--text-muted);
+    font-size: 0.68em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.title-panel-top strong,
+.match-row strong {
+    color: var(--accent);
+}
+
+.query-line {
+    margin: 22px 0;
+    padding: 14px 16px;
+    border-radius: 8px;
+    background: #1f2937;
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 0.74em;
+    line-height: 1.45;
+}
+
+.match-list {
+    display: grid;
+    gap: 10px;
+}
+
+.match-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.74em;
+}
+
+.match-row:last-child {
+    border-bottom: 0;
+}
+
+.match-rank {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+.title-proof {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+.title-proof strong,
+.title-proof span {
+    display: block;
+}
+
+.title-proof strong {
+    font-size: 1.05em;
+    color: var(--text);
+}
+
+.title-proof span {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.72em;
+}
+
+/* --- Accent text (replaces gradient-text) --- */
+.accent {
+    color: var(--accent);
+}
+
+/* --- Section Label --- */
+.section-label {
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+/* --- Lead paragraph --- */
+.lead {
+    font-size: 1.2em;
+    color: var(--text-secondary);
+    max-width: var(--content-narrow);
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* --- Big stat --- */
+.big-stat {
+    font-size: 6em;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+}
+
+.stat-label {
+    font-size: 0.85em;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+/* --- Stat row --- */
+.stat-row {
+    display: flex;
+    gap: 64px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 32px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-num {
+    font-size: 3.5em;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+}
+
+/* --- Problem visual --- */
+.problem-slide h2 {
+    max-width: var(--content-wide);
+}
+
+.problem-visual {
+    width: 100%;
+    max-width: min(1180px, var(--content-xl));
+    margin: 16px auto 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.16);
+    background: #dceeff;
+}
+
+.problem-visual img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.problem-caption {
+    max-width: var(--content-default);
+    color: var(--text);
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* --- Columns --- */
+.cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    width: 100%;
+    max-width: var(--content-default);
+    text-align: left;
+}
+
+.cols-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    width: 100%;
+    max-width: var(--content-wide);
+    text-align: left;
+}
+
+/* --- Card (minimal) --- */
+.card {
+    text-align: left;
+    padding: 20px 0;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+    color: var(--accent);
+}
+
+.card p {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    max-width: none;
+    margin: 0;
+    text-align: left;
+}
+
+/* --- Divider --- */
+.divider {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 24px auto;
+}
+
+/* --- Table --- */
+.reveal table {
+    width: 100%;
+    max-width: var(--content-default);
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.reveal table th,
+.reveal table td {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.85em;
+    border-bottom: 1px solid var(--border);
+}
+
+.reveal table th {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7em;
+}
+
+.reveal table td {
+    color: var(--text-secondary);
+}
+
+.reveal table .highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.reveal table .dim {
+    color: var(--text-muted);
+}
+
+/* --- Step flow --- */
+.steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: center;
+    margin: 32px 0;
+    width: 100%;
+    max-width: var(--content-wide);
+}
+
+.step {
+    flex: 1;
+    text-align: left;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 8px;
+}
+
+.step-num {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-bottom: 12px;
+}
+
+.step h3 {
+    text-align: left;
+    font-size: 1em;
+    margin-bottom: 6px;
+    color: var(--accent);
+}
+
+.step p {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    text-align: left;
+    max-width: none;
+    margin: 0;
+}
+
+/* --- Feature list --- */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    max-width: 700px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list .label {
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+/* --- Pill --- */
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--accent);
+    font-size: 0.75em;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* --- Inline list (horizontal) --- */
+.inline-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 24px 0;
+}
+
+.inline-list span {
+    padding: 8px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    font-size: 0.8em;
+    color: var(--accent);
+    font-weight: 500;
+    background: rgba(255, 102, 0, 0.06);
+}
+
+/* --- Before/After comparison --- */
+.compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    width: 100%;
+    max-width: var(--content-default);
+    text-align: left;
+    margin-top: 28px;
+}
+
+.compare-col h3 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+.compare-col:last-child {
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+}
+
+.compare-col p {
+    text-align: left;
+    margin: 0 0 8px 0;
+    font-size: 0.9em;
+}
+
+/* --- Fragment transitions --- */
+.reveal .fragment {
+    transition: all 0.3s ease;
+}
+
+.reveal .fragment.fade-up {
+    transform: translateY(14px);
+}
+
+.reveal .fragment.fade-up.visible {
+    transform: translateY(0);
+}
+
+/* --- Print --- */
+@media print {
+    .reveal .slides section {
+        page-break-inside: avoid;
+    }
+}
