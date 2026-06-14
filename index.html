@@ -39,6 +39,10 @@
                             Search surveillance footage with natural language.<br>
                             Turn days of video review into minutes.
                         </p>
+                        <p
+                            style="margin-top: 24px; font-size: 0.55em; color: var(--text-muted); letter-spacing: 0.04em;">
+                            Dinanath Padhya &bull; Krishna Acharya &bull; Pratik Pokharel &bull; Utsab Dahal
+                        </p>
                     </div>
 
                     <div class="title-panel" aria-label="LocaTORs search preview">
@@ -97,6 +101,7 @@
 
                 <p class="problem-caption">
                     A single incident can mean dozens of cameras, days of manual review, and critical leads going cold.
+                    Nepal Police units often have limited manpower and no specialized tools for video evidence.
                 </p>
             </section>
 
@@ -187,8 +192,8 @@
                     </div>
                     <div class="card">
                         <h3>Photo search</h3>
-                        <p>Upload a reference image. OSNet matches by full body &mdash; works from behind, in crowds,
-                            with masks.</p>
+                        <p>Upload a reference image. OSNet matches by full body, even from behind, in crowds,
+                            or with masks.</p>
                         <p
                             style="font-family: var(--font-mono); font-size: 0.75em; color: var(--accent); margin-top: 12px;">
                             suspect.jpg &rarr; 47 matches</p>
@@ -212,24 +217,24 @@
                 <h2>The system watches so humans don't have to</h2>
 
                 <p style="margin-bottom: 28px;">
-                    LocaTORs recognizes suspicious behavior automatically &mdash;<br>
-                    no one needs to be staring at a monitor 24/7.
+                    LocaTORs recognizes suspicious behavior automatically.<br>
+                    No one needs to be staring at a monitor 24/7.
                 </p>
 
                 <div class="cols-3">
                     <div class="card">
                         <h3>Violence</h3>
-                        <p>Fights, assaults, kicking &mdash; flagged the moment it starts, not after someone reports it.
+                        <p>Fights, assaults, kicking. Flagged the moment it starts, not after someone reports it.
                         </p>
                     </div>
                     <div class="card">
                         <h3>Theft &amp; robbery</h3>
-                        <p>Bag snatching, shoplifting, forced robbery &mdash; instant alert with video clip and
+                        <p>Bag snatching, shoplifting, forced robbery. Instant alert with video clip and
                             timestamp.</p>
                     </div>
                     <div class="card">
                         <h3>Crowd &amp; intrusion</h3>
-                        <p>Crowd panic, fence climbing, loitering near restricted zones &mdash; catch it before it
+                        <p>Crowd panic, fence climbing, loitering near restricted zones. Caught before it
                             escalates.</p>
                     </div>
                 </div>
@@ -264,7 +269,7 @@
                 </div>
 
                 <div style="margin-top: 40px;">
-                    <div class="big-stat" style="color: var(--accent);">200&ndash;700x</div>
+                    <div class="big-stat" style="color: var(--accent);">200 &ndash; 700x</div>
                     <div class="stat-label">faster than manual review</div>
                 </div>
             </section>
@@ -312,8 +317,8 @@
                         </tr>
                         <tr>
                             <td>Infrastructure</td>
-                            <td class="dim">Cloud-dependent, proprietary</td>
-                            <td class="highlight">Offline, open-source, $0</td>
+                            <td class="dim">Needs internet &amp; vendor license</td>
+                            <td class="highlight">Fully offline, open-source, free</td>
                         </tr>
                     </tbody>
                 </table>
@@ -326,15 +331,26 @@
 
                 <h2>Built for justice. Not mass surveillance.</h2>
 
-                <div class="cols-2" style="margin-top: 32px;">
+                <div class="cols-3" style="margin-top: 32px;">
                     <div class="card">
                         <h3>100% offline</h3>
                         <p>All processing on the investigator's machine. No cloud. No third-party access. No API keys.
                         </p>
                     </div>
                     <div class="card">
+                        <h3>Privacy Act 2075 ready</h3>
+                        <p>Case-scoped data only. No bulk collection. Retention limits enforced. Compliant with Nepal's
+                            privacy framework.</p>
+                    </div>
+                    <div class="card">
                         <h3>No persistent biometrics</h3>
-                        <p>Embeddings are generated per case and discarded. No permanent database of identities.</p>
+                        <p>Embeddings generated per case and discarded after. No permanent identity database ever
+                            stored.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Explainable results</h3>
+                        <p>Every match shows a confidence score and the visual region it matched on. Bias-aware design
+                            with no black-box decisions.</p>
                     </div>
                     <div class="card">
                         <h3>Full audit trail</h3>
@@ -389,39 +405,41 @@
                     <ul class="feature-list">
                         <li>
                             <span class="label">Detection</span>
-                            <span>YOLOv8 &mdash; real-time person detection</span>
+                            <span>YOLOv8 → real-time person detection</span>
                         </li>
                         <li>
                             <span class="label">Re-ID</span>
-                            <span>OSNet &mdash; full-body re-identification (512-d)</span>
+                            <span>OSNet → full-body re-identification (512-d)</span>
                         </li>
                         <li>
                             <span class="label">Search</span>
-                            <span>CLIP ViT-B/32 &mdash; text-to-image matching</span>
+                            <span>CLIP ViT-B/32 → text-to-image matching</span>
                         </li>
                         <li>
                             <span class="label">Activity</span>
-                            <span>X-CLIP &mdash; zero-shot video activity recognition</span>
+                            <span>X-CLIP → zero-shot video activity recognition</span>
                         </li>
                         <li>
                             <span class="label">Index</span>
-                            <span>FAISS &mdash; sub-second vector similarity search</span>
+                            <span>FAISS → sub-second vector similarity search</span>
                         </li>
                     </ul>
-                    <div style="text-align: left;">
-                        <p style="text-align: left; margin-bottom: 14px;"><strong>All pretrained models</strong> &mdash;
+                    <div style="text-align: left; font-size: 0.92em;">
+                        <p style="text-align: left; margin-bottom: 10px;"><strong>All pretrained,</strong>
                             zero training data required</p>
-                        <p style="text-align: left; margin-bottom: 14px;"><strong>Open-source</strong> &mdash; PyTorch,
-                            HuggingFace, no vendor lock-in</p>
-                        <p style="text-align: left; margin-bottom: 14px;"><strong>GPU-ready</strong> &mdash; CUDA
+                        <p style="text-align: left; margin-bottom: 10px;"><strong>100% open-source, zero cost.</strong>
+                            No licenses, no vendor lock-in</p>
+                        <p style="text-align: left; margin-bottom: 10px;"><strong>GPU-ready:</strong> CUDA
                             acceleration with CPU fallback</p>
-                        <p style="text-align: left;"><strong>Works with any camera</strong> &mdash; standard video
-                            formats, no hardware changes</p>
+                        <p style="text-align: left; margin-bottom: 10px;"><strong>Any camera, any format.</strong>
+                            No new hardware needed</p>
+                        <p style="text-align: left;"><strong>Minimal training:</strong> investigators search
+                            like they use Google</p>
                     </div>
                 </div>
             </section>
 
-            <!-- ===== 13. ROADMAP ===== -->
+            <!-- ===== 12. ROADMAP ===== -->
 
             <section>
                 <span class="section-label">Roadmap</span>
@@ -430,19 +448,25 @@
 
                 <div class="cols-3" style="margin-top: 32px;">
                     <div class="card" style="border-left: 2px solid var(--accent); padding-left: 16px;">
-                        <h3 style="font-size: 0.95em;">Now</h3>
-                        <p>Photo + text + hybrid search. 12 activity types. Cross-camera tracking. PDF reports. Audit
-                            logging.</p>
+                        <h3 style="font-size: 0.95em;">Now (built)</h3>
+                        <p>Multi-modal search (text, photo, hybrid).<br>
+                            Real-time RTSP stream monitoring.<br>
+                            12 activity types detected automatically.<br>
+                            Cross-camera tracking. PDF reports. Audit log.</p>
                     </div>
                     <div class="card" style="border-left: 2px solid var(--text-muted); padding-left: 16px;">
                         <h3 style="font-size: 0.95em;">Next</h3>
-                        <p>Real-time RTSP streams. TensorRT acceleration. License plate recognition. WebSocket live
-                            alerts.</p>
+                        <p>TensorRT acceleration (4x faster inference).<br>
+                            License plate recognition (ANPR).<br>
+                            WebSocket live alerts to mobile.<br>
+                            Nepali language voice search.</p>
                     </div>
                     <div class="card" style="border-left: 2px solid var(--text-muted); padding-left: 16px;">
                         <h3 style="font-size: 0.95em;">Future</h3>
-                        <p>Geospatial heatmaps. Edge deployment (Jetson). Multi-language search. Multi-agency
-                            federation.</p>
+                        <p>Geospatial heatmaps with GIS overlay.<br>
+                            Edge deployment on Jetson devices.<br>
+                            Multi-agency federation and sharing.<br>
+                            Vehicle and object tracking.</p>
                     </div>
                 </div>
 
@@ -461,18 +485,18 @@
                 <div class="cols-2" style="margin-top: 32px;">
                     <div class="card">
                         <h3>Criminal tracking</h3>
-                        <p>A thief snatches a bag in Butwal bazaar. Upload one blurry photo &mdash; LocaTORs traces
+                        <p>A thief snatches a bag in Butwal bazaar. Upload one blurry photo, and LocaTORs traces
                             their path across every camera in the city within minutes.</p>
                     </div>
                     <div class="card">
                         <h3>Missing persons &amp; animals</h3>
-                        <p>A child goes missing near a temple during Dashain. Type "small girl in red kurta" &mdash; get
+                        <p>A child goes missing near a temple during Dashain. Type "small girl in red kurta", get
                             every matching sighting across all cameras, timestamped.</p>
                     </div>
                     <div class="card">
                         <h3>Traffic monitoring</h3>
                         <p>Track pedestrian flow at Siddharthanagar crossings. Spot jaywalkers, wrong-way vehicles, and
-                            congestion patterns &mdash; all from existing CCTV.</p>
+                            congestion patterns, all from existing CCTV.</p>
                     </div>
                     <div class="card">
                         <h3>Crowd &amp; mob alerts</h3>
@@ -511,7 +535,7 @@
                 <div class="divider" style="margin: 32px auto;"></div>
 
                 <p class="lead">
-                    We built this in 48 hours.<br>
+                    We built this in just one day.<br>
                     Imagine what it does with a real deployment.
                 </p>
 
@@ -519,8 +543,12 @@
                     Questions? Let's talk.
                 </div>
 
+                <div style="margin-top: 36px; font-size: 0.7em; color: var(--text-secondary);">
+                    Dinanath Padhya &bull; Krishna Acharya &bull; Pratik Pokharel &bull; Utsab Dahal
+                </div>
+
                 <div
-                    style="margin-top: 40px; font-size: 0.55em; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase;">
+                    style="margin-top: 16px; font-size: 0.55em; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase;">
                     Team LocaTORs &bull; Lumbini Province Police Hackathon 2026
                 </div>
             </section>
